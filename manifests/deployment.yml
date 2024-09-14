@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: acrimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acrimage
+  template:
+    metadata:
+      labels:
+        app: acrimage 
+    spec:
+      containers:
+        - name: acrimage 
+          image: acrakspipeline.azurecr.io/acrimage
+          ports:
+          - containerPort: 80
