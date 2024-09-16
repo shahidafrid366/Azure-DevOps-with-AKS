@@ -54,6 +54,6 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'kube-manifest'
+        ArtifactName: 'kube-manifests'
         publishLocation: 'Container'
     
