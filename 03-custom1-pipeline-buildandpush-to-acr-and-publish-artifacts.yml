@@ -44,6 +44,9 @@ stages:
     # Task-2: Copy files (Copy files from a source folder to target folder)
     # Source Directory: $(System.DefaultWorkingDirectory)/kube-manifests
     # Target Directory: $(Build.ArtifactStagingDirectory)
+    - bash: echo "Listing contents of $(System.DefaultWorkingDirectory):"; ls -la $(System.DefaultWorkingDirectory)
+      displayName: 'List contents of working directory'
+
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifest'
